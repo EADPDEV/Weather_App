@@ -1,0 +1,25 @@
+Para que la aplicacion funcione adecuadamente se necesita de factores que quizas tengas incovenientes a la hora de tener el codigo en frente
+
+1. La version de Python. en mi caso estoy utilizando la version 3.10.8 -64 bit
+esto es optimo para que el codigo presente tenga interferencias con alguien que tenga una version antigua de python
+
+2. Descargar las librerias externas
+las librerias externas utilizadas fueron:
+geocoder
+datetime
+
+2.1. Eliminar las lineas 
+from decouple import config
+key=(config('API_KEY'))
+
+3 Tener presente que el codigo no correra si no usas una API_KEY propia, por medidas de seguridad no puse mi propia API_KEY
+por lo que lo mas optimo seria ingresar a la pagina de OpenWeatherMap, crear una cuenta y solicitar una API_KEY. Tras el plazo de un dia
+puedes con total seguridad realizar el siguiente paso:
+
+REEMPLZAR DONDE "{key}" con llaves incluido por tu propia API_KEY
+url = f'https://api.openweathermap.org/data/2.5/weather?q={query}&appid={key}&units=metric' 
+el cambio de esta linea de codigo aplica para las otras semejantes
+
+4 Al correr el codigo (si todavia te da problemas (aunque no creo)) ve a la carpeta de ProyectoPlima > settings.py > DEBUG = True
+
+Con esto seria suficiente.
